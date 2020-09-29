@@ -28,9 +28,15 @@ if __name__ == '__main__':
         print("load %s" % str(i),num)
     train_list_recover = data_clean.delet_stopping_trips(train_list_recover)
     scaler_path = os.path.join(model_save_path,"scaler.m")
-    train_x,train_y,test_x,test_y,anchor_train,anchor_test = data_clean.train_test_perpare(train_list_recover,scaler_model_path=scaler_path)
-    train_y = train_y - anchor_train
-    test_y = test_y-anchor_test
+    anchor_based = False
+    if anchor_based ==  True:
+        train_x,train_y,test_x,test_y,anchor_train,anchor_test = data_clean.train_test_perpare(train_list_recover,
+                                                                                               scaler_model_path=scaler_path,
+                                                                                               using_anchor_based=anchor_based)
+        train_y = train_y - anchor_train
+        test_y = test_y-anchor_test
+    else:
+        train_x, train_y, test_x, test_y= data_clean.train_test_perpare(train_list_recover,scaler_model_path=scaler_path)
     #xgboost data
     Train = xgb.DMatrix(train_x, label=train_y)
     Test = xgb.DMatrix(test_x, label=np.array(test_y))
@@ -64,6 +70,9 @@ if __name__ == '__main__':
     features_concat = np.concatenate([output_1[...,np.newaxis],output_2[...,np.newaxis]],axis=1)
     features_concat = xgb.DMatrix(features_concat, label=test_y)
     preds = xgb_2.predict(features_concat)
+    if anchor_based:
+        preds = preds+ anchor_test
+        test_y = test_y + anchor_test
     endl_array = np.array([1]).repeat(test_y.size, axis=0)
     test_y = np.array(test_y)
     end_index = np.argwhere(np.array(test_y) > endl_array)
