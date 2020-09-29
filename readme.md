@@ -3,7 +3,7 @@
 **Authors**: [liang zhao](https://github.com/liangzhao123),
 
 ## Updates
-2020-09-26: Create this project. Though there are some code not released, we will soon released in this project
+2020-09-26: Create this project. Though there are some code not released, we will soon released them in this project
 
 ## Demo
 
