@@ -73,7 +73,7 @@ cd trainer
 python ANNs.py
 ```
 # Eval
-To evaluate the model, run the following command:
+The evaluation of these models are conducted in train process
 ```
 The evaluation of these models are conducted in train process
 ```
