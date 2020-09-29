@@ -39,7 +39,7 @@ $ pip install matplotlib
 ```bash
 $ python utils/preprocessing.py
 ```
-or you can use the data in after silce fold
+or you can use the data in “after silce” fold
 
 
 3. The data fold
