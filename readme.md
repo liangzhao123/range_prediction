@@ -1,4 +1,4 @@
-# Machine learning based driving range prediction
+# Machine learning based driving range prediction of electric vehicles
 
 **Authors**: [liang zhao](https://github.com/liangzhao123),
 
