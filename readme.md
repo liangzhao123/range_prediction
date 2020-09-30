@@ -31,8 +31,8 @@ $ pip install matplotlib
 # Data Preparation
 1. Download the  dataset from [here](https://pan.baidu.com/s/1fG6bC6tqb2nWABSlQE93lw 
                                      passward：sa9p). Data to download include:
-    * Raw data, including five vehicles' driving data
-    * After silce, cut the raw dataset into segments (individual trips)
+    * raw data, including five vehicles' driving data
+    * after_silce, this fold is the individual trips that cut from raw dataset through the interval values including time interval, SOC interval and the mileage interval
 
 2. data preprocessing
 
