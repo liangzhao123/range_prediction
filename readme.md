@@ -82,7 +82,7 @@ If you find this work useful in your research, please consider cite:
 ```
 @journals{IEEE access,
 title={Machine learning based driving range prediction for electric vehicles},
-author={Liang Zhao, Yao Wei, Yu Wang, Jie He},
+author={Liang Zhao, Yao Wei, Yu Wang, Jie Hu},
 year={2020}
 }
 ```
